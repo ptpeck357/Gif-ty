@@ -1,0 +1,36 @@
+body {
+	margin: 0;
+	background-color: #f2f2f2;
+}
+
+.container {
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+button {
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	background-color: #62959a;
+	color: white;
+	font-family: "Tahoma", "Times New Roman", Times, serif;
+}
+
+#movie-form {
+	margin-top: 20px;
+	float: right;
+}
+
+input#giphy-input {
+	width: 230px;
+}
+
+#find-giphy {
+	margin-top: 10px;
+	background-color: #62959a;
+	color: white;
+	font-family: "Tahoma", "Times New Roman", Times, serif;
+}
+
