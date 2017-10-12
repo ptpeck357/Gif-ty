@@ -2,12 +2,7 @@ body {
 	background-color: #f2f2f2;
 }
 
-.container {
-	margin: 0px;
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
+/*Buttons for each giphy*/
 button {
 	margin-right: 5px;
 	margin-left: 5px;
@@ -17,15 +12,21 @@ button {
 	font-family: "Tahoma", "Times New Roman", Times, serif;
 }
 
+/*Tells the user which button they're on*/
+button:hover{
+	background-color: #466a6d;
+}
+
+
 #movie-form {
 	margin-top: 20px;
-	float: right;
 }
 
 input#giphy-input {
 	width: 230px;
 }
 
+/*This is the submit button for the form*/
 #find-giphy {
 	margin-top: 10px;
 	background-color: #62959a;
@@ -33,12 +34,18 @@ input#giphy-input {
 	font-family: "Tahoma", "Times New Roman", Times, serif;
 }
 
-.moviegif {
-	padding-right: 5px;
+/*Tells the user which they're over the submit button*/
+#find-giphy:hover {
+	background-color: #466a6d;
 }
 
 /*Rating captions*/
-p{
-	padding-right: 5px;
+p{	
+	margin-top: 15px;
 }
+
+.moviegif {
+	/*width: 100%;*/
+}
+
 

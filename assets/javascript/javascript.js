@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
 //Global array
-var giphy = ["The Office", "Avengers", "Batman", "Star Strek", "Parks and Recreation", "The Flash", "Napoleon Dynamite", 
-			 "Star Wars", "The Walking Dead", "Brave Heart", "Gladiator", "Minions", "Friends", "lost", "Supernatural", "NCIS",
-			"Rush Hour"];
+var giphy = ["Avengers", "Batman", "BraveHeart", "The Flash", "Friends", "Gladiator", "Green Arrow", "Groundhog Day", "John Wick", "Lost",  
+			"Minions", "Napoleon Dynamite", "NCIS", "The Office", "Parks and Recreation", "Paul BLart: Mall Cop", "Red Dawn", "Rush Hour", 
+			"Star Strek", "Star Wars", "Supernatural", "The Walking Dead",];
 
 //Calls data from the API from GIPHY
 function alertgif() {
@@ -12,50 +12,50 @@ function alertgif() {
 	$("#display").html("");
 
 	//Grabs current value from the button
-	var value = $(this).attr("data-btn");
+   var value = $(this).attr("data-btn");
 
 	//Calls data from the API for the current value of the button
-	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + value + "&api_key=dc6zaTOxFJmzC&limit=10"
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + value + "&api_key=dc6zaTOxFJmzC&limit=10&rating=pg"
 
 	//Calls API from Giphy
 	var xhr = $.get(queryURL);
 	
-		xhr.done(function(data){console.log(data) 
+	xhr.done(function(data){console.log(data) 
 
-			//Grabs data from the object and define them into reasonable variables using a for-loop
-			for (var i = 0; i < data.data.length; i++) {
+		//Grabs data from the object and define them into reasonable variables using a for-loop
+		for (var i = 0; i < data.data.length; i++) {
 
-				var showdiv = $("<div class='col-md-4'>");
+			var showdiv = $("<div class='col-lg-4'>");
 
-				var rating = data.data[i].rating;
+			var rating = data.data[i].rating;
 
-				var animatedgif = data.data[i].images.fixed_height.url;
+			var animatedgif = data.data[i].images.fixed_height_small.url;
 
-				var static = data.data[i].images.fixed_height_still.url;
+			var static = data.data[i].images.fixed_height_small_still.url;
 
-				var showimage = $("<img>");
+			var showimage = $("<img>");
 
-				var p = $("<p>").text("Rating: " + rating);
+			var p = $("<p>").text("Rating: " + rating);
 
-				showimage.attr("src", static);
+			showimage.attr("src", static);
 
-        		showimage.addClass("moviegif");
+    		showimage.addClass("moviegif");
 
-        		showimage.attr("data-state", "still");
+    		showimage.attr("data-state", "still");
 
-        		showimage.attr("data-still", static);
+    		showimage.attr("data-still", static);
 
-        		showimage.attr("data-animate", animatedgif);
+    		showimage.attr("data-animate", animatedgif);
 
-        		showdiv.append(p);
+    		showdiv.append(p);
 
-        		showdiv.append(showimage);
+    		showdiv.append(showimage);
 
-        		//We put all 10 gifs that we called into the HTML
-        		$("#display").prepend(showdiv);
+    		//We put all 10 gifs that we called into the HTML
+    		$("#display").prepend(showdiv);
 
-			};
-		});
+		};
+	});
 };
 
 //Going through the array and building buttons for each element and adding a button and an attribute to each element
