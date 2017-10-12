@@ -4,12 +4,12 @@ body {
 
 /*Buttons for each giphy*/
 button {
-	margin-right: 5px;
-	margin-left: 5px;
-	margin-bottom: 5px;
+	margin: 5px;
 	background-color: #62959a;
 	color: white;
 	font-family: "Tahoma", "Times New Roman", Times, serif;
+	border: 3px groove #62959a;
+	border-radius: 3px;
 }
 
 /*Tells the user which button they're on*/
@@ -40,12 +40,21 @@ input#giphy-input {
 }
 
 /*Rating captions*/
-p{	
+p {	
+	font-family: "Tahoma", "Times New Roman", Times, serif;
+	font-size: 15px;
+	color:  #f2f2f2;
+	text-align: center;
 	margin-top: 15px;
+	margin-left: 5px;
+	width: 100%;
+	background-color: #606060;
+	border: 3px groove #62959a;
+	border-radius: 3px;
 }
 
 .moviegif {
-	/*width: 100%;*/
+	margin-left: 5px;
 }
 
 
