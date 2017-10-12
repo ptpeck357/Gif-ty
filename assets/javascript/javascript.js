@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 //Global array
-var giphy = ["The Office", "Avengers", "Batman", "Star Strek", "Parks and Recreation", "Arrow", "The Flash", "Napoleon Dynamite", 
+var giphy = ["The Office", "Avengers", "Batman", "Star Strek", "Parks and Recreation", "The Flash", "Napoleon Dynamite", 
 			 "Star Wars", "The Walking Dead", "Brave Heart", "Gladiator", "Minions", "Friends", "lost", "Supernatural", "NCIS",
 			"Rush Hour"];
 
@@ -19,6 +19,7 @@ function alertgif() {
 
 	//Calls API from Giphy
 	var xhr = $.get(queryURL);
+	
 		xhr.done(function(data){console.log(data) 
 
 			//Grabs data from the object and define them into reasonable variables using a for-loop
