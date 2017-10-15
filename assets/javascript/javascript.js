@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 //Global array
 var giphy = ["Avengers", "Batman", "BraveHeart", "The Flash", "Friends", "Gladiator", "Green Arrow", "Groundhog Day", "John Wick", "Lost",  
-			"Minions", "Napoleon Dynamite", "NCIS", "The Office", "Parks and Recreation", "Paul BLart: Mall Cop", "Red Dawn", "Rush Hour", 
+			"Minions", "Napoleon Dynamite", "NCIS", "The Office", "Parks and Recreation", "Paul Blart: Mall Cop", "Red Dawn", "Rush Hour", 
 			"Star Strek", "Star Wars", "Supernatural", "The Walking Dead",];
 
 //Calls data from the API from GIPHY
@@ -25,13 +25,13 @@ function alertgif() {
 		//Grabs data from the object and define them into reasonable variables using a for-loop
 		for (var i = 0; i < data.data.length; i++) {
 
-			var showdiv = $("<div class='col-lg-4'>");
+			var showdiv = $("<div class='moviegif'>");
 
 			var rating = data.data[i].rating;
 
-			var animatedgif = data.data[i].images.fixed_height_small.url;
+			var animatedgif = data.data[i].images.fixed_height.url;
 
-			var static = data.data[i].images.fixed_height_small_still.url;
+			var static = data.data[i].images.fixed_height_still.url;
 
 			var showimage = $("<img>");
 
@@ -86,18 +86,18 @@ $("#find-giphy").on("click", function(event){
 
 	event.preventDefault();
 
-	var gifvalue = $("#giphy-input").val();
+	var gifvalue = $("#giphy-input").val().trim();
 
 	giphy.push(gifvalue);
 
 	renderbuttons();
 });
 
-//When any of the button is clicked, it calls the "alertgif" function
+//When any of the buttons are clicked, it calls the "alertgif" function
 $(document).on("click", ".giphybtn", alertgif);
 
 
-//If any of the gif is clicked, it calls the function "pausePlayGif" 
+//If any of the gif's are clicked, it calls the function "pausePlayGif" 
 $(document).on("click", ".moviegif", pausePlayGifs);
 
 //Function accesses "data-state" attribute and depending on status, changes image source to "data-animate" or "data-still"

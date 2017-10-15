@@ -45,16 +45,23 @@ p {
 	font-size: 15px;
 	color:  #f2f2f2;
 	text-align: center;
-	margin-top: 15px;
+	margin-top: 25px;
 	margin-left: 5px;
 	width: 100%;
 	background-color: #606060;
 	border: 3px groove #62959a;
 	border-radius: 3px;
+	
 }
 
 .moviegif {
 	margin-left: 5px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.moviegif img {
+	height: 150px;
 }
 
 
