@@ -18,38 +18,33 @@ function alertgif() {
 	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + value + "&api_key=dc6zaTOxFJmzC&limit=10&rating=pg"
 
 	//Calls API from Giphy
-	var xhr = $.get(queryURL);
+	$.ajax({
+        url: queryURL,
+        method: "GET"
+      })
 	
-	xhr.done(function(data){console.log(data) 
+	.done(function(data){
 
 		//Grabs data from the object and define them into reasonable variables using a for-loop
 		for (var i = 0; i < data.data.length; i++) {
 
 			var showdiv = $("<div class='moviegif'>");
 
-			var rating = data.data[i].rating;
-
-			var animatedgif = data.data[i].images.fixed_height.url;
-
-			var static = data.data[i].images.fixed_height_still.url;
-
 			var showimage = $("<img>");
 
-			var p = $("<p>").text("Rating: " + rating);
+			var p = $("<p>").text("Rating: " + data.data[i].rating);
 
-			showimage.attr("src", static);
+			showimage.attr("src", data.data[i].images.fixed_height_still.url);
 
     		showimage.addClass("moviegif");
 
     		showimage.attr("data-state", "still");
 
-    		showimage.attr("data-still", static);
+    		showimage.attr("data-still", data.data[i].images.fixed_height_still.url);
 
-    		showimage.attr("data-animate", animatedgif);
+    		showimage.attr("data-animate", data.data[i].images.fixed_height.url);
 
-    		showdiv.append(p);
-
-    		showdiv.append(showimage);
+    		showdiv.append(p, showimage);
 
     		//We put all 10 gifs that we called into the HTML
     		$("#display").prepend(showdiv);
@@ -77,7 +72,6 @@ function renderbuttons() {
 		$("#buttons").append(giphybtn);
 	};
 };
-
 
 
 
