@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
 //Global array
-var giphy = ["Avengers", "Batman", "BraveHeart", "The Flash", "Friends", "Gladiator", "Green Arrow", "Groundhog Day", "John Wick", "Lost",  
-			"Minions", "Napoleon Dynamite", "NCIS", "The Office", "Parks and Recreation", "Paul Blart: Mall Cop", "Red Dawn", "Rush Hour", 
+var giphy = ["Avengers", "Batman", "BraveHeart", "The Flash", "Friends", "Gladiator", "Green Arrow", "Groundhog Day", "John Wick", "Lost",
+			"Minions", "Napoleon Dynamite", "NCIS", "The Office", "Parks and Recreation", "Paul Blart: Mall Cop", "Red Dawn", "Rush Hour",
 			"Star Strek", "Star Wars", "Supernatural", "The Walking Dead",];
 
 //Calls data from the API from GIPHY
@@ -15,14 +15,14 @@ function alertgif() {
    var value = $(this).attr("data-btn");
 
 	//Calls data from the API for the current value of the button
-	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + value + "&api_key=dc6zaTOxFJmzC&limit=10&rating=pg"
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + value + "&api_key=dc6zaTOxFJmzC&limit=20&rating=pg"
 
 	//Calls API from Giphy
 	$.ajax({
         url: queryURL,
         method: "GET"
       })
-	
+
 	.done(function(data){
 
 		//Grabs data from the object and define them into reasonable variables using a for-loop
@@ -62,7 +62,7 @@ function renderbuttons() {
 	for (var i = 0; i < giphy.length; i++) {
 
 		var giphybtn = $("<button>");
-		
+
 		giphybtn.addClass("giphybtn");
 
 		giphybtn.attr("data-btn", giphy[i]);
@@ -91,7 +91,7 @@ $("#find-giphy").on("click", function(event){
 $(document).on("click", ".giphybtn", alertgif);
 
 
-//If any of the gif's are clicked, it calls the function "pausePlayGif" 
+//If any of the gif's are clicked, it calls the function "pausePlayGif"
 $(document).on("click", ".moviegif", pausePlayGifs);
 
 //Function accesses "data-state" attribute and depending on status, changes image source to "data-animate" or "data-still"

@@ -40,7 +40,7 @@ input#giphy-input {
 }
 
 /*Rating captions*/
-p {	
+p {
 	font-family: "Tahoma", "Times New Roman", Times, serif;
 	font-size: 15px;
 	color:  #f2f2f2;
@@ -51,7 +51,7 @@ p {
 	background-color: #606060;
 	border: 3px groove #62959a;
 	border-radius: 3px;
-	
+
 }
 
 .moviegif {
