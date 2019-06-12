@@ -15,7 +15,7 @@ function alertgif() {
    var value = $(this).attr("data-btn");
 
 	//Calls data from the API for the current value of the button
-	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + value + "&api_key=dc6zaTOxFJmzC&limit=20&rating=pg"
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + value + "&api_key=p5uAo56YZHAUFjBiCXfkWDeLsucWvUCT&limit=20&rating=pg"
 
 	//Calls API from Giphy
 	$.ajax({
